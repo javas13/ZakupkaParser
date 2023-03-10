@@ -1,0 +1,86 @@
+﻿<Window x:Class="ZakupkaParser5.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ZakupkaParser5"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="800" Width="1200">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="600"></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="80"></RowDefinition>
+        </Grid.RowDefinitions>
+        <!--<StackPanel Margin="10">-->
+            <TextBlock FontSize="20" Text="Список закупок"></TextBlock>
+            <ListBox x:Name="zakupkaLstBox" SelectionChanged="zakupkaLstBox_SelectionChanged" ScrollViewer.CanContentScroll="False" >
+                <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Border BorderBrush="Black" BorderThickness="2" Padding="5">
+                        <StackPanel Background="{Binding Backgr}">
+                            <TextBlock FontSize="20" Text="{Binding NumberOfCheck, StringFormat='Номер проверки: {0}'}"></TextBlock>
+                            <TextBlock FontSize="20" Text="{Binding NumberOfPurchase, StringFormat='Номер закупки: {0}'}"></TextBlock>
+                            <TextBlock FontSize="20" Text="{Binding DateOfAccommodation, StringFormat='Дата размещения: {0}'}"></TextBlock>
+                            <TextBlock FontSize="20" Text="{Binding DateOfCheck, StringFormat='Дата проверки: {0}'}"></TextBlock>
+                        </StackPanel>
+                    </Border>
+                </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+        <!--</StackPanel>-->
+        
+        <StackPanel Grid.Column="1">
+            <Button Height="50" Content="Старт" FontSize="20" Click="Button_Click" Margin="10,10,10,10" ></Button>
+            <TextBlock Text="От" FontSize="20" Margin="10,0,10,0"></TextBlock>
+            <TextBox FontSize="20" Height="30" Margin="10,0,10,0" x:Name="dateFrtxt"></TextBox>
+            <TextBlock FontSize="20" Margin="10,0,10,0" Text="До"></TextBlock>
+            <TextBox FontSize="20" Height="30" Margin="10,0,10,0" x:Name="dateTotxt"></TextBox>
+            <TextBlock FontSize="20" Margin="10,0,10,0" Text="Периодичность(мс)"></TextBlock>
+            <TextBox x:Name="periodicytxt" FontSize="20" Height="30" Margin="10,0,10,0"></TextBox>
+            <StackPanel Orientation="Horizontal" Margin="10,10,10,0">
+                <TextBlock FontSize="16" Text="Время до обновления:"></TextBlock>
+                <TextBlock FontSize="16" Name="tbTime" />
+            </StackPanel>
+            <StackPanel Margin="10,10,10,0" Orientation="Horizontal">
+                <TextBlock FontSize="16" Text="Кол-во записей:"></TextBlock>
+                <TextBlock FontSize="16" x:Name="numberZapisitxt"></TextBlock>
+            </StackPanel>
+            <TextBlock x:Name="nada4" Text="3" FontSize="20"></TextBlock>
+            <Button Content="Выгрузить в HTML" Margin="10,10,10,10" Height="50" FontSize="20" Click="Button_Click_2"></Button>
+            <StackPanel Orientation="Vertical">
+                <StackPanel Orientation="Horizontal" Margin="10,0,10,10" >
+                    <TextBlock  Text="Номер проверки:" FontSize="18"></TextBlock>
+                    <TextBox  FontSize="16" x:Name="proverkanmbtxt" Width="350"  Margin="10,0,0,0"></TextBox>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="10,0,10,10">
+                    <TextBlock Text="Номер закупки:" FontSize="18"></TextBlock>
+                    <TextBox FontSize="16" x:Name="zakupkanmbtxt" Width="350" Margin="26,0,0,0"></TextBox>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="10,0,10,10">
+                    <TextBlock Text="Ссылка проверки:" FontSize="18"></TextBlock>
+                    <TextBox FontSize="16" Width="350" x:Name="proverkahrtxt" Margin="6,0,0,0"></TextBox>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="10,0,10,10">
+                    <TextBlock Text="Ссылка закупки:" FontSize="18"></TextBlock>
+                    <TextBox Width="350" x:Name="zakupkahrtxt" Margin="22,0,0,0" FontSize="16"></TextBox>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="10,0,10,10">
+                    <TextBlock Text="Почта:" FontSize="18"></TextBlock>
+                    <TextBox Width="350" x:Name="mailtxt" Text="infouvest@mail.ru" Margin="102,0,0,0" FontSize="16"></TextBox>
+                </StackPanel>
+            </StackPanel>
+        </StackPanel>
+        <StackPanel Grid.Row="1">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Margin="5" FontSize="24">Дата выгрузки:</TextBlock>
+                <TextBlock x:Name="dataVigruztx" Margin="5" FontSize="24"></TextBlock>
+            </StackPanel>
+            <Button Content="Прочитано?" Width="200" HorizontalAlignment="Left" FontSize="18" Margin="5,0,0,0" Click="Button_Click_3"></Button>
+           
+        </StackPanel>
+    </Grid>
+</Window>

@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "dgSpecHash": "qCQMxbX43PlAQwmh0PP0IpYCDbnYdUJU90qG2drxOdcGhUGlfQkyExU601Y14JPoerJZy/aviECidUkWL5msHw==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\andre\\source\\repos\\ZakupkaParser5\\ZakupkaParser5\\ZakupkaParser5.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\andre\\.nuget\\packages\\anglesharp\\1.0.1\\anglesharp.1.0.1.nupkg.sha512",
+    "C:\\Users\\andre\\.nuget\\packages\\system.buffers\\4.5.1\\system.buffers.4.5.1.nupkg.sha512",
+    "C:\\Users\\andre\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512",
+    "C:\\Users\\andre\\.nuget\\packages\\system.text.encoding.codepages\\6.0.0\\system.text.encoding.codepages.6.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}
